@@ -1,0 +1,71 @@
+#Spring
+spring:
+  #数据源
+  datasource:
+    dynamic:
+      primary: master #默认数据源
+      datasource:
+        master:
+          url: jdbc:oracle:thin:@47.103.27.25:1521:xe
+          username: iom
+          password: ROOT
+          driver-class-name: oracle.jdbc.OracleDriver # 3.2.0开始支持SPI可省略此配置
+        slave:
+          url: jdbc:oracle:thin:@47.103.27.25:1521:xe
+          username: wspe
+          password: ROOT
+          driver-class-name: oracle.jdbc.OracleDriver
+      #druid连接池
+      druid:
+        initial-size: 5
+        min-idle: 5
+        max-active: 20
+        max-wait: 60000
+        time-between-eviction-runs-millis: 60000
+        min-evictable-idle-time-millis: 300000
+        validation-query: SELECT 1 FROM DUAL
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        pool-prepared-statements: true
+        max-pool-prepared-statement-per-connection-size: 20
+        filters: stat,slf4j
+        connection-properties: druid.stat.mergeSql\=true;druid.stat.slowSqlMillis\=5000
+  #jackson时间格式化
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+#配置日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+  mapper-locations: classpath*:/mapper/**/*.xml
+
+
+#端口
+server:
+  port: 8086
+#logger 配置文件路径
+
+logging:
+  config: classpath:logback.xml
+
+xxl:
+  job:
+    accessToken:
+    executor:
+      appname: xxl-job-app
+      ip:
+      logpath: /data/applogs/xxl-job/jobhandler
+      logretentiondays: 30
+      port: -1
+    admin:
+      addresses: http://localhost:8088/xxl-job-admin
+
+
+
+
+
+
