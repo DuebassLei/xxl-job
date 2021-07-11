@@ -1,18 +1,18 @@
+## 简介(此版为oracle版本)
+XXL-JOB是一个分布式任务调度平台，其核心设计目标是开发迅速、学习简单、轻量级、易扩展。
 
-## Introduction(此版为oracle版本)
-XXL-JOB is a distributed task scheduling framework. 
-It's core design goal is to develop quickly and learn simple, lightweight, and easy to expand. 
-Now, it's already open source, and many companies use it in production environments, real "out-of-the-box".
-
-XXL-JOB是一个分布式任务调度平台，其核心设计目标是开发迅速、学习简单、轻量级、易扩展。现已开放源代码并接入多家公司线上产品线，开箱即用。
-此版本为2.1.0 参考[这个项目](https://github.com/Gigass/xxl-job-oracle)
-
-## Documentation (原始作者-mysql版详见)
+## 文档 (原始作者-mysql版详见)
 - [github](https://github.com/xuxueli/xxl-job)
 - [中文文档](https://www.xuxueli.com/xxl-job/)
 - [English Documentation](https://www.xuxueli.com/xxl-job/en/)
 
-## Features
+
+## 当前版本特点
+- 集成mybatis-plus
+- 动态数据源，多数据源切换支持
+- 常用工具类封装
+
+## 官方版本特点
 - 1、简单：支持通过Web页面对任务进行CRUD操作，操作简单，一分钟上手；
 - 2、动态：支持动态修改任务状态、启动/停止任务，以及终止运行中任务，即时生效；
 - 3、调度中心HA（中心式）：调度采用中心式设计，“调度中心”自研调度组件并支持集群部署，可保证调度中心HA；
@@ -49,16 +49,12 @@ XXL-JOB是一个分布式任务调度平台，其核心设计目标是开发迅�
 - 34、用户管理：支持在线管理系统用户，存在管理员、普通用户两种角色；
 - 35、权限控制：执行器维度进行权限控制，管理员拥有全量权限，普通用户需要分配执行器权限后才允许相关操作；
 
-## Contributing
-Contributions are welcome! Open a pull request to fix a bug, or open an [Issue](https://github.com/NopSmile/xxl-job-oracle-2.1.0/issues) to discuss a new feature or change.
-
-欢迎参与项目贡献！比如提交PR修复一个bug，或者新建 [Issue](https://github.com/NopSmile/xxl-job-oracle-2.1.0/issues) 讨论新特性或者变更。
 
 
-## Copyright and License
-This product is open source and free, and will continue to provide free community technical support. Individual or enterprise users are free to access and use.
+## 使用
 
-- Licensed under the GNU General Public License (GPL) v3.
-- Copyright (c) 2015-present, xuxueli.
+- xxl-job-admin 监控管理，修改数据源，建立相应表直接部署即可
+- xxl-job-core 核心模块，无需修改
+- xxl-job-app 任务调度业务模块，实现具体业务逻辑即可
 
-产品开源免费，并且将持续提供免费的社区技术支持。个人或企业内部可自由的接入和使用。
+
